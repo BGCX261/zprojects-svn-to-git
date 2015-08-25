@@ -1,0 +1,43 @@
+Options +FollowSymlinks
+# Fichier htaccess
+
+# Activation du module de réécriture d'URL :
+RewriteEngine on
+
+# Routage des différentes adresses.
+RewriteRule ^messagerie.html$ index.php?module=mp&action=20
+RewriteRule ^messagerie-20-p([0-9]+).html$ index.php?module=mp&action=20&page=$1
+RewriteRule ^messagerie-20-([0-9]+)-p([0-9]+).html$ index.php?module=mp&action=20&id=$1&page=$2
+RewriteRule ^messagerie-21-([0-9]+).html$ index.php?module=mp&action=21&recipient_id=$1
+RewriteRule ^messagerie-22-([0-9]+)-p([0-9]+).html$ index.php?module=mp&action=22&id=$1&page=$2
+RewriteRule ^messagerie-22-([0-9]+)-p([0-9]+)-([0-9a-zA-Z_-]+).html$ index.php?module=mp&action=22&id=$1&page=$2
+RewriteRule ^messagerie-27-([0-9]+)-([0-9]+).html$ index.php?module=mp&action=27&mp_id=$1&recipient_id=$2
+RewriteRule ^messagerie-28-([0-9]+)-([0-9]+).html$ index.php?module=mp&action=28&mp_id=$1&recipient_id=$2
+RewriteRule ^messagerie-([0-9]+).html$ index.php?module=mp&action=$1
+RewriteRule ^messagerie-([0-9]+)-([0-9]+).html$ index.php?module=mp&action=$1&id=$2
+RewriteRule ^messagerie-([0-9]+)-([0-9]+)-([0-9a-zA-Z_-]+).html$ index.php?module=mp&action=$1&id=$2
+RewriteRule ^users-([0-9]+).html$ index.php?module=users&action=$1
+RewriteRule ^users-([0-9]+)-([0-9a-zA-Z_-]+).html$ index.php?module=users&action=$1&user=$2
+RewriteRule ^img/mail/([0-9]+).png$ app/libs/img.email.php?user=$1
+RewriteRule ^users-3-confirm-([a-z/0-9]+)-([a-z/0-9/\./@]+).html$ index.php?module=users&action=3&code=$1&mail=$2
+RewriteRule ^admin.html$ index.php?module=admin&action=34 [QSA,L]
+RewriteRule ^admin-([0-9]+).html$ index.php?module=admin&action=$1 [QSA,L]
+RewriteRule ^admin-([0-9]+)-p([0-9]+).html$ index.php?module=admin&action=$1&page=$2 [QSA,L]
+RewriteRule ^admin-([0-9]+)-([0-9]+).html$ index.php?module=admin&action=$1&id=$2 [QSA,L]
+RewriteRule ^admin-([0-9]+)-([0-9]+)-p([0-9]+).html$ index.php?module=admin&action=$1&id=$2&page=$3 [QSA,L]
+RewriteRule ^admin-([0-9]+)-([0-9]+)-([a-zA-z0-9-]+).html$ index.php?module=admin&action=$1&id=$2 [QSA,L]
+RewriteRule ^projets.html$ index.php?module=projet&action=45 [QSA,L]
+RewriteRule ^projets-([0-9]+).html$ index.php?module=projet&action=$1 [QSA,L]
+RewriteRule ^projets-([0-9]+)-p([0-9]+).html$ index.php?module=projet&action=$1&page=$2 [QSA,L]
+RewriteRule ^projets-([0-9]+)-([0-9]+).html$ index.php?module=projet&action=$1&id=$2 [QSA,L]
+RewriteRule ^projets-(50|60|71)-([0-9]+)-([0-9]+)-p([0-9]+).html$ index.php?module=projet&action=$1&project_id=$2&id=$3&page=$4 [QSA,L]
+RewriteRule ^projets-(50|60|71)-([0-9]+)-([0-9]+)-p([0-9]+)-([a-zA-z0-9-]+).html$ index.php?module=projet&action=$1&project_id=$2&id=$3&page=$4 [QSA,L]
+RewriteRule ^projets-(50|52|53|55|56|57|58|62|63|67|69|77|78|79)-([0-9]+)-([0-9]+).html$ index.php?module=projet&action=$1&project_id=$2&id=$3 [QSA,L]
+RewriteRule ^projets-(64|65|66)-([0-9]+)-([0-9]+)-([0-9]+).html$ index.php?module=projet&action=$1&project_id=$2&id=$3&com_id=$4 [QSA,L]
+RewriteRule ^projets-([0-9]+)-([0-9]+)-p([0-9]+).html$ index.php?module=projet&action=$1&id=$2&page=$3 [QSA,L]
+RewriteRule ^projets-([0-9]+)-([0-9]+)-([a-zA-z0-9-]+).html$ index.php?module=projet&action=$1&id=$2 [QSA,L]
+RewriteRule ^parseur.html$ index.php?module=parser [QSA,L]
+RewriteRule ^zupload-(85|86|87|88|89|90|91).html$ index.php?module=zupload&action=$1 [QSA,L]
+
+#set Path=D:\Program Files\ActiveState Komodo Edit 5\;D:\WINNT\system32;D:\WINNT;D:\WINNT\System32\Wbem;D:\Program Files\Fichiers communs\Roxio Shared\DLLShared;D:\Program Files\QuickTime\QTSystem\;D:\Program Files\TortoiseSVN\bin;D:\wamp\bin\php\php5.3.0
+#php lib/vendor/symfony/data/bin/symfony generate:project zproject_syn
